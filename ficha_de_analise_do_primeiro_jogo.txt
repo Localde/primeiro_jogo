@@ -15,13 +15,35 @@ R:
 -------------------------------------------------------------------------------------------
 LEGENDAS
 -------------------------------------------------------------------------------------------
-tk(): Função do Módulo de Interface Gráfica, cria a Interface Gráfica. Exemplo: instancia = Tk()
+Criando Módulo próprio: Crie um arquivo nome_que_quiser.py e o invoque para outro arquivo com a seguinte estrutura:
+from nome_que_quiser import * ou import nome_que_quiser.
 
-geometry(): Define a área da Interface Gráfica. Exemplo: instancia.geometry('800x600')
+ resizable: É uma função que controla o redimencionamento da interface gráfica. Exemplos:
+self.root.resizable(False, False)
+self.root.resizable(True, False)
+self.root.resizable(False, True)
+self.root.resizable(True, True)
 
-mainloop(): Executa o programa. Exemplo: instancia.mainloop()
+Frame: Pelo que eu entendi sem a função Frame não tem como usar a Função Canvas, ainda não entendi o porque exatamente.
+Exemplo:
+self.frame = Frame(bg='black')
+self.frame.pack()
 
-title(): Dá um título a tela. Exemplo: instancia.title('Calculadora para Estatística')
+Canvas: Pelo que eu entendi cria uma segunda tela onde sera trabalhado a movimentação dos objetos do jogo. 
+Exemplo:
+self.canvas = Canvas(self.frame, bg='black', width=CANVAS_L, height=CANVAS_A, cursor='watch')
+self.canvas.pack()
 
+cursor: É um parâmetro que define o formato do curso.
+Exemplo:
+self.canvas = Canvas(self.frame, bg='black', width=CANVAS_L, height=CANVAS_A, cursor='watch')
+self.canvas.pack()
 
+create_line: É um método de criação de linha do objeto canvas.
+Exemplo: 
+self.canvas.create_line((0, 0), 100, 100, fill='white')
+
+fill: É um parâmetro que define a cor da linha.
+Exemplo:
+self.canvas.create_line((0, 0), 100, 100, fill='white')
 --------------------------------------------------------------------------------------------

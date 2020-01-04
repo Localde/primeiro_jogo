@@ -17,12 +17,14 @@ class Jogo(object):
         self.frame.pack()
 
         #Criamos a tela do jogo
-        self.canvas = Canvas(self.frame, bg='black', width=CANVAS_L, height=CANVAS_A)
+        self.canvas = Canvas(self.frame, bg='black', width=CANVAS_L, height=CANVAS_A, cursor='watch')
         self.canvas.pack()
 
+        self.canvas.create_line((0, 0), 100, 100, fill='white')
+
         #E colocamos um botão para começar o jogo
-        #self.começar = Button(self.root, text = 'START', command=self.começa)
-        #self.começar.pack()
+        self.começar = Button(self.root, text='START')
+        self.começar.pack()
 
         #self.novoJogo()
 
