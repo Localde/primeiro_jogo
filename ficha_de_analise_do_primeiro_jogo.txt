@@ -1,0 +1,27 @@
+tkinter: Módulo de Interface Gráfica.
+
+1) O que isso faz?
+
+R:
+
+2) Para que isso serve?
+
+R:
+
+3) Como isso funciona?
+
+R:
+
+-------------------------------------------------------------------------------------------
+LEGENDAS
+-------------------------------------------------------------------------------------------
+tk(): Função do Módulo de Interface Gráfica, cria a Interface Gráfica. Exemplo: instancia = Tk()
+
+geometry(): Define a área da Interface Gráfica. Exemplo: instancia.geometry('800x600')
+
+mainloop(): Executa o programa. Exemplo: instancia.mainloop()
+
+title(): Dá um título a tela. Exemplo: instancia.title('Calculadora para Estatística')
+
+
+--------------------------------------------------------------------------------------------
