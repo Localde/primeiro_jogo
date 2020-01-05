@@ -18,7 +18,7 @@ LEGENDAS
 Criando Módulo próprio: Crie um arquivo nome_que_quiser.py e o invoque para outro arquivo com a seguinte estrutura:
 from nome_que_quiser import * ou import nome_que_quiser.
 
- resizable: É uma função que controla o redimencionamento da interface gráfica. Exemplos:
+resizable: É uma função que controla o redimencionamento da interface gráfica. Exemplos:
 self.root.resizable(False, False)
 self.root.resizable(True, False)
 self.root.resizable(False, True)
@@ -39,11 +39,21 @@ Exemplo:
 self.canvas = Canvas(self.frame, bg='black', width=CANVAS_L, height=CANVAS_A, cursor='watch')
 self.canvas.pack()
 
-create_line: É um método de criação de linha do objeto canvas.
+create_line: É um método de criação de linha dentro do Frame que esta na Interface Grafica.
 Exemplo: 
 self.canvas.create_line((0, 0), 100, 100, fill='white')
 
 fill: É um parâmetro que define a cor da linha.
-Exemplo:
+Exemplos:
 self.canvas.create_line((0, 0), 100, 100, fill='white')
+cor = random.choice(['green', 'orange', 'white', 'lightgray', 'yellow', 'purple'])
+self.canvas.create_rectangle(b*j+(j+1)*e, i*h+(i+1)*e + y0, b*j+(j+1)*e+b, i*h+(i+1)*e + y0 + h, fill=cor)
+
+create_rectangle: É um método do canvas que cria retangulos dentro do Frame que esta na Interface Gráfica. 
+Exemplo:
+self.canvas.create_rectangle((CANVAS_L//2, 350), (CANVAS_L//2 + 100, 370), fill='green')
+
+create_text: É um método do canvas que cria texto dentro do Frame que esta na Interface Gráfica.
+Exemplo:
+self.canvas.create_text(CANVAS_L/2, CANVAS_A/2, text='OLA COLEGA!', fill='white')
 --------------------------------------------------------------------------------------------
