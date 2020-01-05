@@ -56,4 +56,8 @@ self.canvas.create_rectangle((CANVAS_L//2, 350), (CANVAS_L//2 + 100, 370), fill=
 create_text: É um método do canvas que cria texto dentro do Frame que esta na Interface Gráfica.
 Exemplo:
 self.canvas.create_text(CANVAS_L/2, CANVAS_A/2, text='OLA COLEGA!', fill='white')
+
+create_polygon: É um método do canvas usado para criar poligonos, dentro do Frame que esta na Interface Gráfica.
+Exemplo:
+self.canvas.create_polygon((100, 200), (150, 250), (250, 250), (300, 200), (300, 100), (250, 50), (150, 50), (100, 100), fill='white')
 --------------------------------------------------------------------------------------------

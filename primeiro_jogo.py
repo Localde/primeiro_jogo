@@ -25,7 +25,7 @@ class Jogo(object):
         self.começar = Button(self.root, text='START')
         self.começar.pack()
 
-        self.canvas.create_line((100, 200), (150, 250), (250, 250), (300, 200), (300, 100), (250, 50), (150, 50), (100, 100), (100, 200), fill='white')
+        self.canvas.create_polygon((100, 200), (150, 250), (250, 250), (300, 200), (300, 100), (250, 50), (150, 50), (100, 100), fill='white')
 
         #self.novoJogo()
 
