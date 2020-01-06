@@ -25,9 +25,9 @@ class Jogo(object):
         self.começar = Button(self.root, text='START')
         self.começar.pack()
 
-        self.canvas.create_polygon((100, 200), (150, 250), (250, 250), (300, 200), (300, 100), (250, 50), (150, 50), (100, 100), fill='white')
+        #self.canvas.create_polygon((100, 200), (150, 250), (250, 250), (300, 200), (300, 100), (250, 50), (150, 50), (100, 100), fill='white')
 
-        #self.novoJogo()
+        self.novoJogo()
 
         self.root.mainloop()
 
@@ -36,6 +36,14 @@ class Jogo(object):
         Cria os elementos de um novo jogo
         """
         self.canvas.create_rectangle((CANVAS_L//2, 350), (CANVAS_L//2 + 100, 370), fill='green')
+
+        #Cria a bola do jogo
+        raio = 30
+        p = (100, 200)
+        self.canvas.create_oval(p[0], p[1], p[0] + raio, p[1] + raio, fill='red', outline='black')
+
+        #Cria um arco dentro da bola
+        #self.canvas.create_arc(p[0], p[1], p[0] + raio, p[1] + raio, fill='orange', start=60)#, extend = 90)
 
         #Lista dos ratângulos
         self.r = []
@@ -47,6 +55,6 @@ class Jogo(object):
             cor = random.choice(['green', 'orange', 'white', 'lightgray', 'yellow', 'purple'])
             for j in range(c):
                 self.canvas.create_rectangle(b*j+(j+1)*e, i*h+(i+1)*e + y0, b*j+(j+1)*e+b, i*h+(i+1)*e + y0 + h, fill=cor)
-        self.canvas.create_text(CANVAS_L/2, CANVAS_A/2, text='OLA COLEGA!', fill='white', font=('Verdana', 20, 'bold'))
+        self.canvas.create_text(CANVAS_L/2, CANVAS_A/2, text='OLA COLEGA!', fill='white', font=('Verdana', 10, 'bold'))
 if __name__ == '__main__':
     Jogo()
