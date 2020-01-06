@@ -66,4 +66,8 @@ self.canvas.create_arc(p[0], p[1], p[0] + raio, p[1] + raio, fill='orange', star
 start do create_arc: Define em que grau ira iniciar o arco.
 Exemplo:
 self.canvas.create_arc(p[0], p[1], p[0] + raio, p[1] + raio, fill='orange', start=60)#, extend = 90)
+
+extent do create_arc: Define a extensão do arco.
+Exemplo:
+self.canvas.create_arc(p[0], p[1], p[0] + raio, p[1] + raio, fill='orange', start=60, extent=90)#, extent = 90)
 --------------------------------------------------------------------------------------------
