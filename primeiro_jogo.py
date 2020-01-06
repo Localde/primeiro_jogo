@@ -40,7 +40,7 @@ class Jogo(object):
         #Cria a bola do jogo
         raio = 30
         p = (100, 200)
-        self.canvas.create_oval(p[0], p[1], p[0] + raio, p[1] + raio, fill='red', outline='black')
+        self.canvas.create_oval(p[0], p[1], p[0] + raio, p[1] + raio, fill='red', outline='white')
 
         #Cria um arco dentro da bola
         #self.canvas.create_arc(p[0], p[1], p[0] + raio, p[1] + raio, fill='orange', start=60)#, extend = 90)

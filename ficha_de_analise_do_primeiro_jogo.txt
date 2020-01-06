@@ -53,4 +53,10 @@ raio = 30
 p = (100, 200)
 self.canvas.create_oval(p[0], p[1], p[0] + raio, p[1] + raio, fill='red', outline='black')
 
+outline: É um atributo que defina a cor da linha de um objeto.
+Exemplo:
+raio = 30
+p = (100, 200)
+self.canvas.create_oval(p[0], p[1], p[0] + raio, p[1] + raio, fill='red', outline='black')
+
 --------------------------------------------------------------------------------------------
