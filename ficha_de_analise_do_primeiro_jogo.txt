@@ -59,4 +59,11 @@ raio = 30
 p = (100, 200)
 self.canvas.create_oval(p[0], p[1], p[0] + raio, p[1] + raio, fill='red', outline='black')
 
+create_arc: Cria um arco dentro de um objeto.
+Exemplo:
+self.canvas.create_arc(p[0], p[1], p[0] + raio, p[1] + raio, fill='orange', start=60)#, extend = 90)
+
+start do create_arc: Define em que grau ira iniciar o arco.
+Exemplo:
+self.canvas.create_arc(p[0], p[1], p[0] + raio, p[1] + raio, fill='orange', start=60)#, extend = 90)
 --------------------------------------------------------------------------------------------

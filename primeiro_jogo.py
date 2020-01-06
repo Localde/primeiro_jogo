@@ -43,7 +43,7 @@ class Jogo(object):
         self.canvas.create_oval(p[0], p[1], p[0] + raio, p[1] + raio, fill='red', outline='white')
 
         #Cria um arco dentro da bola
-        #self.canvas.create_arc(p[0], p[1], p[0] + raio, p[1] + raio, fill='orange', start=60)#, extend = 90)
+        self.canvas.create_arc(p[0], p[1], p[0] + raio, p[1] + raio, fill='orange', start=60)#, extend = 90)
 
         #Lista dos ratângulos
         self.r = []
