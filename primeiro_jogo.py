@@ -2,6 +2,9 @@ from tkinter import *
 from constantes import *
 import random
 
+#Canvas: itemconfig, id, delete, tag, move
+#Tk: after
+
 class Jogo(object):
     """
     Classe que organiza os elementos do jogo
@@ -22,7 +25,7 @@ class Jogo(object):
         self.canvas.pack()
 
         #E colocamos um botão para começar o jogo
-        self.começar = Button(self.root, text='START')
+        self.começar = Button(self.root, text='START', command=self.começa)
         self.começar.pack()
 
         #self.canvas.create_polygon((100, 200), (150, 250), (250, 250), (300, 200), (300, 100), (250, 50), (150, 50), (100, 100), fill='white')
@@ -35,12 +38,14 @@ class Jogo(object):
         """
         Cria os elementos de um novo jogo
         """
-        self.canvas.create_rectangle((CANVAS_L//2, 350), (CANVAS_L//2 + 100, 370), fill='green')
+        self.player = self.canvas.create_rectangle((CANVAS_L//2, 350), (CANVAS_L//2 + 100, 370), fill='green')
 
         #Cria a bola do jogo
         raio = 30
         p = (100, 200)
-        self.canvas.create_oval(p[0], p[1], p[0] + raio, p[1] + raio, fill='red', outline='white')
+        self.bola = self.canvas.create_oval(p[0], p[1], p[0] + raio, p[1] + raio, fill='red', outline='white')
+        self.b_vx = self.b_vy = 5
+        self.b_x, self.b_y = p
 
         #Cria um arco dentro da bola
         #self.canvas.create_arc(p[0], p[1], p[0] + raio, p[1] + raio, fill='orange', start=60)#, extent = 90)
@@ -55,6 +60,50 @@ class Jogo(object):
             cor = random.choice(['green', 'orange', 'white', 'lightgray', 'yellow', 'purple'])
             for j in range(c):
                 self.canvas.create_rectangle(b*j+(j+1)*e, i*h+(i+1)*e + y0, b*j+(j+1)*e+b, i*h+(i+1)*e + y0 + h, fill=cor)
-        self.canvas.create_text(CANVAS_L/2, CANVAS_A/2, text='OLA COLEGA!', fill='white', font=('Verdana', 10, 'bold'))
+        #self.canvas.create_text(CANVAS_L/2, CANVAS_A/2, text='OLA COLEGA!', fill='white', font=('Verdana', 10, 'bold'))
+
+        self.jogando = True
+
+    def começa(self):
+        """
+        Inicia o jogo
+        """
+        self.jogar()
+
+
+    def jogar(self):
+        """
+        Deve ser executado enquanto o jogo estiver rodando
+        """
+        if self.jogando:
+            self.update()
+            self.desenhar()
+
+            self.root.after(10, self.jogar)
+        else:
+            self.acabou(self.msg)
+
+
+    def desenhar(self):
+        """
+        Metodo para redesenhar a tela do jogo
+        """
+        #self.canvas.delete()
+        self.bola = self.canvas.create_oval(self.b_x, self.b_y, self.b_x + 30, self.b_y + 30, fill='red', outline='white')
+
+
+    def update(self):
+        """
+        Updatamos as condições do jogo
+        """
+        #self.canvas.itemconfig(self.player, fill='blue')
+        self.b_x += self.b_vx
+        self.b_y += self.b_vy
+
+        if self.b_x > CANVAS_L - 30 or self.b_x < 0:
+            self.b_vx *= -1
+        if self.b_y > CANVAS_A - 30 or self.b_y < 0:
+            self.b_vy *= -1
+
 if __name__ == '__main__':
     Jogo()
