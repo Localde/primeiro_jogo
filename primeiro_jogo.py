@@ -97,7 +97,7 @@ class Jogo(object):
         """
         Updatamos as condições do jogo
         """
-        #self.canvas.itemconfig(self.player, fill='blue')
+        self.canvas.itemconfig(self.player, fill='blue')
         self.canvas.move('bola', self.b_vx, self.b_vy)
         self.b_x += self.b_vx
         self.b_y += self.b_vy

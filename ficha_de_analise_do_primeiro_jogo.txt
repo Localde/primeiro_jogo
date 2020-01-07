@@ -95,4 +95,8 @@ move: É um método simplificado para mover um objeto.
 Exemplo:
 self.bola = self.canvas.create_oval(p[0], p[1], p[0] + raio, p[1] + raio, fill='red', outline='white', tag='bola')
 self.canvas.move('bola', self.b_vx, self.b_vy)
+
+itemconfig: Método usado para reconfigurar algum objeto.
+Exemplo:
+self.canvas.itemconfig(self.player, fill='blue')
 --------------------------------------------------------------------------------------------
