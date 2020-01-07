@@ -71,5 +71,14 @@ extent do create_arc: Define a extensão do arco.
 Exemplo:
 self.canvas.create_arc(p[0], p[1], p[0] + raio, p[1] + raio, fill='orange', start=60, extent=90)#, extent = 90)
 
+delete(): Este método permite apagar imagens. No caso de criação de jogos, quando for redenrizar a mesma imagem consecutivamente para criar um movimento, usa se este método para apagar as anteriores para que não aja repetição da mesma.
+Exemplo:
+def desenhar(self):
+        """
+        Metodo para redesenhar a tela do jogo
+        """
+        self.canvas.delete(ALL)
+        self.bola = self.canvas.create_oval(self.b_x, self.b_y, self.b_x + 30, self.b_y + 30, fill='red', outline='white')
+
 
 --------------------------------------------------------------------------------------------

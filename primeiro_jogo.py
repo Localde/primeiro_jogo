@@ -88,7 +88,7 @@ class Jogo(object):
         """
         Metodo para redesenhar a tela do jogo
         """
-        #self.canvas.delete()
+        self.canvas.delete(ALL)
         self.bola = self.canvas.create_oval(self.b_x, self.b_y, self.b_x + 30, self.b_y + 30, fill='red', outline='white')
 
 
