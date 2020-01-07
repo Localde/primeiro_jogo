@@ -84,4 +84,15 @@ tag: Este atributo de marcação é usado como identificar.
 Exemplo:
 self.canvas.delete('bola')
 self.bola = self.canvas.create_oval(self.b_x, self.b_y, self.b_x + 30, self.b_y + 30, fill='red', outline='white', tag='bola')
+
+pass: É uma palavra-chave usada quando precisamos preencher uma lacuna no programa, muito útil para não apresentar erros, garantindo que o código que esteja incompleto seja mantido na fonte do programa para futuros usos.
+Exemplo:
+def soma_de_quadrados(x, y):
+    pass # k = x**x + y**y
+    # return k
+
+move: É um método simplificado para mover um objeto.
+Exemplo:
+self.bola = self.canvas.create_oval(p[0], p[1], p[0] + raio, p[1] + raio, fill='red', outline='white', tag='bola')
+self.canvas.move('bola', self.b_vx, self.b_vy)
 --------------------------------------------------------------------------------------------

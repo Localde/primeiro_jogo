@@ -48,7 +48,7 @@ class Jogo(object):
         self.b_x, self.b_y = p
 
         #Cria um arco dentro da bola
-        self.canvas.create_arc(p[0], p[1], p[0] + raio, p[1] + raio, fill='orange', start=60, tag='bola')#, extent = 90)
+        #self.canvas.create_arc(p[0], p[1], p[0] + raio, p[1] + raio, fill='orange', start=60, tag='bola')#, extent = 90)
 
         #Lista dos ratângulos
         self.r = []
@@ -88,15 +88,17 @@ class Jogo(object):
         """
         Metodo para redesenhar a tela do jogo
         """
-        self.canvas.delete('bola')
-        self.bola = self.canvas.create_oval(self.b_x, self.b_y, self.b_x + 30, self.b_y + 30, fill='red', outline='white', tag='bola')
-        self.canvas.create_arc(self.b_x, self.b_y, self.b_x + 30, self.b_y + 30, fill='orange', start=60, tag='bola')
+        #self.canvas.delete('bola')
+        #self.bola = self.canvas.create_oval(self.b_x, self.b_y, self.b_x + 30, self.b_y + 30, fill='red', outline='white', tag='bola')
+        #self.canvas.create_arc(self.b_x, self.b_y, self.b_x + 30, self.b_y + 30, fill='orange', start=60, tag='bola')
+        pass
 
     def update(self):
         """
         Updatamos as condições do jogo
         """
         #self.canvas.itemconfig(self.player, fill='blue')
+        self.canvas.move('bola', self.b_vx, self.b_vy)
         self.b_x += self.b_vx
         self.b_y += self.b_vy
 
