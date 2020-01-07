@@ -71,6 +71,10 @@ extent do create_arc: Define a extensão do arco.
 Exemplo:
 self.canvas.create_arc(p[0], p[1], p[0] + raio, p[1] + raio, fill='orange', start=60, extent=90)#, extent = 90)
 
+after: Este método recebe um numero e um método ou função, ele espera uma determinada quantidade de tempo em milisegundos e depois chama o método ou a função.
+Exemplo:
+self.root.after(10, self.jogar)
+
 delete(): Este método permite apagar imagens. No caso de criação de jogos, quando for redenrizar a mesma imagem consecutivamente para criar um movimento, usa se este método para apagar as anteriores para que não aja repetição da mesma.
 Exemplo:
 def desenhar(self):
