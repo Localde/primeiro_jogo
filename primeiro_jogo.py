@@ -43,7 +43,7 @@ class Jogo(object):
         #Cria a bola do jogo
         raio = 30
         p = (100, 200)
-        self.bola = self.canvas.create_oval(p[0], p[1], p[0] + raio, p[1] + raio, fill='red', outline='white')
+        self.bola = self.canvas.create_oval(p[0], p[1], p[0] + raio, p[1] + raio, fill='red', outline='white', tag='bola')
         self.b_vx = self.b_vy = 5
         self.b_x, self.b_y = p
 
@@ -88,8 +88,7 @@ class Jogo(object):
         """
         Metodo para redesenhar a tela do jogo
         """
-        self.canvas.delete(ALL)
-        self.bola = self.canvas.create_oval(self.b_x, self.b_y, self.b_x + 30, self.b_y + 30, fill='red', outline='white')
+        
 
 
     def update(self):

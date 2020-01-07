@@ -80,5 +80,8 @@ def desenhar(self):
         self.canvas.delete(ALL)
         self.bola = self.canvas.create_oval(self.b_x, self.b_y, self.b_x + 30, self.b_y + 30, fill='red', outline='white')
 
-
+tag: Este atributo de marcação é usado como identificar.
+Exemplo:
+self.canvas.delete('bola')
+self.bola = self.canvas.create_oval(self.b_x, self.b_y, self.b_x + 30, self.b_y + 30, fill='red', outline='white', tag='bola')
 --------------------------------------------------------------------------------------------
