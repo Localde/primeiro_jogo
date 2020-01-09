@@ -1,6 +1,8 @@
 -------------------------------------------------------------------------------------------
 LEGENDAS
 -------------------------------------------------------------------------------------------
+#Todo jogo precisa ficar preso num loop infinito(after)
+
 Criando Módulo próprio: Crie um arquivo nome_que_quiser.py e o invoque para outro arquivo com a seguinte estrutura:
 from nome_que_quiser import * ou import nome_que_quiser.
 
@@ -103,4 +105,16 @@ self.canvas.move('bola', self.b_vx, self.b_vy)
 itemconfig: Método usado para reconfigurar algum objeto.
 Exemplo:
 self.canvas.itemconfig(self.player, fill='blue')
+--------------------------------------------------------------------------------------------
+bbox(tag): bounding box é a caixa que contém algum elemento. Usado para detecção de colisões no Tkinter.
+exemplo:
+coordenada = self.canvas.bbox('bola')//Devolve as coordenadas x1, y1, x2, y; Servindo para obter o retângulo que contém o determinado elemento.
+--------------------------------------------------------------------------------------------
+find_overlapping(x1, y1, x2, y2): Encontra intersecção. Usado para detecção de colisões no Tkinter.
+Exemplo:
+colisoes = self.canvas.find_overlapping(*coordenada)
+--------------------------------------------------------------------------------------------
+find_closest(x, y, halo=None, start=None): Encontra o mais próximo. Usado para detecção de colisões no Tkinter.
+Exemplo:
+m_p = self.canvas.find_closest(coord[0], coord[1])
 --------------------------------------------------------------------------------------------
